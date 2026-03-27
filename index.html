@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Human Debris — Seattle, WA</title>
+<meta name="description" content="Human Debris — Heavy. Filthy. Yours. Seattle rock band since 1991.">
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Special+Elite&family=Share+Tech+Mono&family=Oswald:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:#0a0806;
+  color:#b8a98a;
+  font-family:'Special Elite',cursive;
+  overflow-x:hidden;
+}
+
+/* GRAIN */
+body::after{
+  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='0.08'/%3E%3C/svg%3E");
+  background-size:300px;mix-blend-mode:overlay;opacity:.5;
+}
+body::before{
+  content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(0,0,0,.6) 1px,transparent 1px);
+  background-size:4px 4px;opacity:.06;
+}
+
+/* ===================== NAV ===================== */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  background:rgba(6,5,4,.97);
+  border-bottom:2px solid #1a1510;
+  padding:12px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{
+  font-family:'UnifrakturMaguntia',cursive;
+  font-size:22px;color:#8a7a5a;letter-spacing:1px;
+  text-decoration:none;
+}
+.nav-links{display:flex;gap:22px;align-items:center;flex-wrap:wrap;}
+.nav-links a{
+  font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:4px;
+  text-transform:uppercase;color:#4a4030;text-decoration:none;
+  transition:color .15s;cursor:pointer;
+  border-bottom:1px solid transparent;padding-bottom:2px;
+}
+.nav-links a:hover{color:#b8a98a;border-bottom-color:#6a4020;}
+.nav-bc{
+  font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;
+  text-transform:uppercase;color:#6a4a1a;border:1px solid #3a2a0e;
+  padding:6px 14px;text-decoration:none;transition:all .15s;
+}
+.nav-bc:hover{background:#1e1208;color:#c8a860;border-color:#5a3e18;}
+
+/* ===================== HERO ===================== */
+#hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  position:relative;background:#0a0806;overflow:hidden;
+}
+.hero-texture{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    repeating-linear-gradient(3deg,transparent 0,transparent 80px,rgba(0,0,0,.25) 80px,rgba(0,0,0,.25) 81px),
+    repeating-linear-gradient(87deg,transparent 0,transparent 120px,rgba(0,0,0,.15) 120px,rgba(0,0,0,.15) 121px);
+}
+.hero-vignette{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 90% 80% at 50% 50%,transparent 20%,rgba(0,0,0,.92) 100%);
+}
+.hero-smear{
+  position:absolute;top:0;left:0;right:0;height:6px;
+  background:repeating-linear-gradient(90deg,#1a0e08 0,#2a1a0a 8px,#0a0806 8px,#0a0806 20px,#150c06 20px,#1a0e08 32px);
+}
+.hero-inner{position:relative;z-index:2;text-align:center;padding:0 24px;}
+.stamp-top{
+  font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:8px;
+  text-transform:uppercase;color:#3a2e20;margin-bottom:28px;
+  border-top:1px solid #1e1810;border-bottom:1px solid #1e1810;
+  padding:6px 0;display:inline-block;min-width:280px;
+}
+.band-name{
+  font-family:'UnifrakturMaguntia',cursive;
+  font-size:clamp(52px,13vw,148px);color:#d4c49a;line-height:.9;
+  text-shadow:3px 3px 0 rgba(0,0,0,.8),-1px -1px 0 rgba(0,0,0,.6),0 0 40px rgba(80,50,10,.3);
+  letter-spacing:-2px;display:block;margin-bottom:8px;position:relative;
+}
+.band-name::before{
+  content:attr(data-t);position:absolute;left:2px;top:2px;
+  color:#1a0e06;z-index:-1;text-shadow:none;opacity:.9;
+}
+.band-name-2{
+  font-family:'UnifrakturMaguntia',cursive;
+  font-size:clamp(52px,13vw,148px);color:#d4c49a;line-height:.9;
+  text-shadow:3px 3px 0 rgba(0,0,0,.8),-1px -1px 0 rgba(0,0,0,.6),0 0 40px rgba(80,50,10,.3);
+  letter-spacing:-2px;display:block;margin-bottom:32px;position:relative;
+}
+.band-name-2::before{
+  content:'Debris';position:absolute;left:2px;top:2px;
+  color:#1a0e06;z-index:-1;text-shadow:none;opacity:.9;
+}
+.hand-rule{
+  width:100%;max-width:500px;height:3px;margin:0 auto 28px;
+  background:repeating-linear-gradient(90deg,#3a2a14 0,#5a3e1e 4px,#2a1e0c 4px,#2a1e0c 12px,#3a2a14 12px,#4a3418 18px,#1a1008 18px,#1a1008 26px);
+}
+.hero-tagline{
+  font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:6px;
+  text-transform:uppercase;color:#3a3020;margin-bottom:48px;
+}
+.cta-row{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
+.btn{
+  font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:5px;
+  text-transform:uppercase;padding:13px 32px;cursor:pointer;
+  text-decoration:none;display:inline-block;transition:all .12s;border:none;
+}
+.btn-filled{background:#2e1e0a;color:#c8a860;border:1px solid #4e3418;box-shadow:2px 2px 0 #060402;}
+.btn-filled:hover{background:#3a2810;color:#e0c080;}
+.btn-stamp{background:#0e0a06;color:#8a7a5a;border:1px solid #2e2416;box-shadow:inset 0 0 0 1px #1a1208,2px 2px 0 #060402;}
+.btn-stamp:hover{background:#161008;color:#c8b888;border-color:#4a3820;}
+.scroll-hint{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:5px;
+  color:rgba(100,100,100,.4);text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.scroll-hint::after{content:'';width:1px;height:40px;background:linear-gradient(to bottom,#4a3418,transparent);}
+
+/* ===================== SHARED ===================== */
+.slab{padding:88px 0;position:relative;}
+.slab+.slab{border-top:1px solid #1a1510;}
+.inner{max-width:1000px;margin:0 auto;padding:0 40px;}
+.kicker{
+  font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:7px;
+  text-transform:uppercase;color:#3a2e1a;margin-bottom:10px;display:block;
+}
+.s-title{
+  font-family:'UnifrakturMaguntia',cursive;
+  font-size:clamp(36px,6vw,72px);color:#c8b888;line-height:.95;
+  text-shadow:2px 2px 0 rgba(0,0,0,.7);margin-bottom:8px;
+}
+.ink-rule{
+  height:2px;width:40px;margin-bottom:36px;
+  background:repeating-linear-gradient(90deg,#4a3418 0,#6a4a22 3px,#2a1a0a 3px,#2a1a0a 8px);
+}
+
+/* ===================== PLAYER ===================== */
+#player{background:#080604;}
+.player-wrap{
+  border:1px solid #1e1810;padding:28px;margin-bottom:32px;
+  background:#0c0a07;position:relative;
+}
+.player-wrap::before{
+  content:'now playing';font-family:'Share Tech Mono',monospace;font-size:7px;
+  letter-spacing:5px;text-transform:uppercase;color:#2a2016;
+  position:absolute;top:-6px;left:16px;background:#0c0a07;padding:0 6px;
+}
+.track-list-player{margin-bottom:24px;}
+.pt{
+  display:flex;align-items:center;gap:16px;padding:12px 0;
+  border-bottom:1px solid #141008;cursor:pointer;transition:background .12s;
+}
+.pt:hover{background:rgba(30,20,8,.4);margin:0 -28px;padding:12px 28px;}
+.pt.active .pt-num{color:#c8a860;}
+.pt.active .pt-name{color:#e0d0a0;}
+.pt-num{font-family:'Share Tech Mono',monospace;font-size:9px;color:#2a2016;min-width:20px;}
+.pt-name{font-size:14px;font-weight:400;letter-spacing:1px;color:#6a5e44;flex:1;text-transform:uppercase;}
+.pt-dur{font-family:'Share Tech Mono',monospace;font-size:9px;color:#2a2016;}
+.pt-play{
+  width:22px;height:22px;border-radius:50%;background:#1e1408;
+  border:1px solid #3a2a0e;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:background .12s;
+}
+.pt-play::after{
+  content:'';border:0;border-top:4px solid transparent;
+  border-bottom:4px solid transparent;border-left:7px solid #6a4a1a;margin-left:2px;
+}
+.pt:hover .pt-play{background:#2a1c0c;}
+.pt.active .pt-play{background:#3a2010;}
+.pt.active .pt-play::after{border-left-color:#c8a860;}
+.progress-area{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.progress-track{flex:1;height:3px;background:#1a1410;cursor:pointer;position:relative;}
+.progress-fill{
+  height:100%;
+  background:repeating-linear-gradient(90deg,#6a4a1a 0,#8a6a2a 4px,#4a3010 4px,#4a3010 8px);
+  width:0%;transition:width .3s;
+}
+.time-label{font-family:'Share Tech Mono',monospace;font-size:8px;color:#2a2016;min-width:32px;}
+.player-controls{display:flex;align-items:center;gap:16px;}
+.ctrl-btn{
+  font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:3px;
+  text-transform:uppercase;background:#0e0a06;color:#5a4a2a;
+  border:1px solid #1e1810;padding:8px 16px;cursor:pointer;transition:all .12s;
+}
+.ctrl-btn:hover{color:#c8a860;border-color:#4a3418;}
+.ctrl-btn.playing{color:#c8a860;border-color:#3a2810;background:#1a1008;}
+.bc-link{
+  display:block;text-align:center;margin-top:20px;
+  font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:5px;
+  text-transform:uppercase;color:#4a3418;text-decoration:none;
+  border:1px solid #2a1e0c;padding:10px;transition:all .15s;
+}
+.bc-link:hover{color:#c8a860;border-color:#5a3e18;background:#0e0a06;}
+
+/* ===================== GALLERY ===================== */
+#gallery{background:#0c0a07;}
+.gallery-intro{font-size:14px;color:#4a3e2a;line-height:1.7;margin-bottom:32px;font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:2px;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:36px;}
+.gp{
+  position:relative;aspect-ratio:4/3;
+  background:#0e0c09;overflow:hidden;
+  cursor:pointer;border:1px solid #141008;
+}
+.gp::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(-8deg,transparent 0,transparent 3px,rgba(255,255,255,.012) 3px,rgba(255,255,255,.012) 4px);
+  z-index:1;
+}
+.gp::after{
+  content:'';position:absolute;inset:0;z-index:1;
+  background:radial-gradient(circle at 0% 0%,rgba(0,0,0,.7) 5%,transparent 30%),
+  radial-gradient(circle at 100% 100%,rgba(0,0,0,.6) 5%,transparent 30%);
+}
+.gp:nth-child(1){background:#131009;}
+.gp:nth-child(2){background:#0f0d0a;}
+.gp:nth-child(3){background:#110e08;}
+.gp:nth-child(4){background:#100d09;}
+.gp:nth-child(5){background:#121008;}
+.gp:nth-child(6){background:#0e0c07;}
+.gp-inner{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:6px;z-index:2;
+}
+.gp-placeholder{
+  font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:3px;
+  color:#2a2016;text-transform:uppercase;text-align:center;line-height:2;
+}
+/* when real images are added */
+.gp img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;filter:grayscale(.4) contrast(1.1);
+  transition:filter .3s;z-index:0;
+}
+.gp:hover img{filter:grayscale(.1) contrast(1.15);}
+.gp-overlay{
+  position:absolute;inset:0;z-index:3;
+  background:rgba(0,0,0,.7);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .2s;
+}
+.gp:hover .gp-overlay{opacity:1;}
+.gp-tag{
+  font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:4px;
+  text-transform:uppercase;color:#6a5a3a;border:1px solid #3a2e18;padding:6px 12px;
+}
+.gp-caption{
+  position:absolute;bottom:0;left:0;right:0;z-index:4;
+  padding:8px 10px;background:linear-gradient(to top,rgba(0,0,0,.9),transparent);
+  font-family:'Share Tech Mono',monospace;font-size:7px;letter-spacing:3px;
+  text-transform:uppercase;color:#3a2e1a;opacity:0;transition:opacity .2s;
+}
+.gp:hover .gp-caption{opacity:1;}
+.gallery-note{
+  margin-top:16px;font-family:'Share Tech Mono',monospace;font-size:8px;
+  letter-spacing:3px;text-transform:uppercase;color:#2a2016;text-align:center;
+}
+
+/* ===================== ABOUT ===================== */
+#about{background:#080604;}
+.about-cols{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:start;}
+.about-body{font-size:16px;line-height:1.9;color:#6a5e44;}
+.about-body p+p{margin-top:18px;}
+.about-body em{color:#9a8a6a;font-style:normal;}
+.member-list{
+  margin-top:36px;border:1px solid #1e1810;
+  padding:20px 24px;position:relative;
+}
+.member-list::before{
+  content:'lineup';font-family:'Share Tech Mono',monospace;font-size:7px;
+  letter-spacing:5px;text-transform:uppercase;color:#2a2016;
+  position:absolute;top:-6px;left:16px;background:#080604;padding:0 6px;
+}
+.member{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:8px 0;border-bottom:1px solid #141008;font-size:13px;
+}
+.member:last-child{border-bottom:none;}
+.member-name{color:#7a6a4a;letter-spacing:1px;}
+.member-role{
+  font-family:'Share Tech Mono',monospace;font-size:8px;
+  letter-spacing:3px;text-transform:uppercase;color:#2e2618;
+}
+.photo-frame{
+  position:relative;background:#0e0c09;aspect-ratio:3/4;
+  border:1px solid #201a10;overflow:hidden;
+}
+.photo-frame::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(-8deg,transparent 0,transparent 3px,rgba(255,255,255,.012) 3px,rgba(255,255,255,.012) 4px);
+}
+.photo-frame::after{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 0% 0%,rgba(0,0,0,.9) 10%,transparent 40%),
+    radial-gradient(circle at 100% 0%,rgba(0,0,0,.8) 8%,transparent 35%),
+    radial-gradient(circle at 0% 100%,rgba(0,0,0,.85) 12%,transparent 40%),
+    radial-gradient(circle at 100% 100%,rgba(0,0,0,.9) 10%,transparent 38%);
+}
+.photo-frame img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;filter:grayscale(.5) contrast(1.1);z-index:0;
+}
+.photo-label{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:4px;
+  text-transform:uppercase;color:#2a2218;text-align:center;line-height:2;z-index:1;
+}
+.tape{position:absolute;height:18px;width:60px;background:rgba(180,160,100,.07);border:1px solid rgba(180,160,100,.06);}
+.tape.t{top:-4px;left:50%;transform:translateX(-50%) rotate(-1deg);}
+.tape.b{bottom:-4px;left:40%;transform:rotate(1.5deg);}
+
+/* ===================== RECORDS ===================== */
+#records{background:#0a0806;}
+.records-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:#141008;margin-top:36px;border:1px solid #141008;
+}
+.record{
+  background:#0c0a07;padding:28px 24px 24px;
+  cursor:pointer;position:relative;transition:background .15s;overflow:hidden;
+}
+.record:hover{background:#0f0d09;}
+.record-num{
+  font-family:'Share Tech Mono',monospace;font-size:8px;
+  letter-spacing:4px;color:#2a2016;margin-bottom:16px;display:block;
+}
+.record-title{
+  font-family:'UnifrakturMaguntia',cursive;font-size:clamp(20px,3vw,32px);
+  color:#a09070;line-height:1;text-shadow:1px 1px 0 rgba(0,0,0,.8);margin-bottom:8px;
+}
+.record-year{
+  font-family:'Share Tech Mono',monospace;font-size:9px;
+  letter-spacing:3px;color:#2e2618;margin-bottom:16px;
+}
+.record-tracks{
+  font-size:11px;line-height:1.8;color:#3a3020;
+  border-top:1px solid #181208;padding-top:12px;margin-top:4px;
+}
+.record-tracks span{display:block;letter-spacing:.5px;}
+.new-badge{
+  display:inline-block;font-family:'Share Tech Mono',monospace;font-size:7px;
+  letter-spacing:4px;text-transform:uppercase;color:#6a4a1a;
+  border:1px solid #3a2a0e;padding:3px 8px;margin-bottom:10px;
+}
+.record-bc{
+  display:inline-block;margin-top:14px;
+  font-family:'Share Tech Mono',monospace;font-size:7px;letter-spacing:3px;
+  text-transform:uppercase;color:#4a3418;text-decoration:none;
+  border:1px solid #2a1e0c;padding:5px 10px;transition:all .15s;
+}
+.record-bc:hover{color:#c8a860;border-color:#5a3e18;}
+
+/* ===================== SHOWS ===================== */
+#shows{background:#0c0a07;}
+.show-list{margin-top:36px;}
+.show{
+  display:grid;grid-template-columns:60px 1fr auto;
+  align-items:center;gap:20px;padding:18px 0;
+  border-bottom:1px solid #141008;transition:background .12s;cursor:pointer;
+}
+.show:hover{background:rgba(30,20,8,.6);margin:0 -40px;padding:18px 40px;}
+.show-date{text-align:center;}
+.show-mo{font-family:'Share Tech Mono',monospace;font-size:7px;letter-spacing:4px;text-transform:uppercase;color:#3a2e1a;}
+.show-dy{font-family:'UnifrakturMaguntia',cursive;font-size:30px;color:#6a5a3a;line-height:1;}
+.show-venue{font-size:16px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8a7a5a;font-family:'Oswald',sans-serif;}
+.show-loc{font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:3px;color:#302818;margin-top:3px;text-transform:uppercase;}
+.show-act{font-family:'Share Tech Mono',monospace;font-size:7px;letter-spacing:3px;color:#2a2010;text-transform:uppercase;text-align:right;}
+
+/* ===================== MAILING LIST ===================== */
+#mailing{background:#080604;}
+.list-wrap{
+  border:1px solid #1e1810;padding:40px;position:relative;
+  background:#0c0a07;max-width:620px;
+}
+.list-wrap::before{
+  content:'mailing list';font-family:'Share Tech Mono',monospace;font-size:7px;
+  letter-spacing:5px;text-transform:uppercase;color:#2a2016;
+  position:absolute;top:-6px;left:16px;background:#0c0a07;padding:0 6px;
+}
+.list-body{font-size:15px;line-height:1.8;color:#5a5040;margin-bottom:28px;}
+.field-row{display:flex;gap:0;margin-bottom:16px;flex-wrap:wrap;}
+.field-row input{
+  flex:1;min-width:140px;background:#080604;border:1px solid #1e1810;
+  color:#b8a98a;font-family:'Special Elite',cursive;font-size:14px;
+  padding:12px 16px;outline:none;transition:border-color .15s;
+}
+.field-row input:not(:last-child){border-right:none;}
+.field-row input::placeholder{color:#2a2216;font-size:11px;letter-spacing:2px;}
+.field-row input:focus{border-color:#3a2a0e;}
+.sub-btn{
+  font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:4px;
+  text-transform:uppercase;background:#2e1e0a;color:#c8a860;border:1px solid #4e3418;
+  padding:12px 20px;cursor:pointer;transition:all .15s;white-space:nowrap;
+}
+.sub-btn:hover{background:#3a2810;color:#e0c080;}
+.list-note{font-family:'Share Tech Mono',monospace;font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#2a2016;}
+.success-msg{
+  display:none;font-family:'Share Tech Mono',monospace;font-size:9px;
+  letter-spacing:4px;text-transform:uppercase;color:#6a5a2a;margin-top:16px;
+}
+
+/* ===================== CONTACT ===================== */
+#contact{background:#0a0806;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.contact-body{font-size:15px;line-height:1.9;color:#5a5040;margin-bottom:28px;}
+.contact-detail{display:flex;flex-direction:column;gap:14px;margin-bottom:32px;}
+.cd{border-left:2px solid #2a1e0c;padding:8px 16px;}
+.cd-label{font-family:'Share Tech Mono',monospace;font-size:7px;letter-spacing:5px;text-transform:uppercase;color:#3a2e1a;margin-bottom:4px;}
+.cd-val{font-size:14px;color:#7a6a4a;letter-spacing:1px;}
+.cd-val a{color:#6a4a1a;text-decoration:none;transition:color .15s;}
+.cd-val a:hover{color:#c8a860;}
+.form-wrap{
+  border:1px solid #1e1810;padding:32px;
+  background:#0c0a07;position:relative;
+}
+.form-wrap::before{
+  content:'booking / press';font-family:'Share Tech Mono',monospace;font-size:7px;
+  letter-spacing:4px;text-transform:uppercase;color:#2a2016;
+  position:absolute;top:-6px;left:16px;background:#0c0a07;padding:0 6px;
+}
+.form-field{margin-bottom:16px;}
+.form-field label{
+  font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:4px;
+  text-transform:uppercase;color:#3a2e1a;display:block;margin-bottom:6px;
+}
+.form-field input,
+.form-field select,
+.form-field textarea{
+  width:100%;background:#080604;border:1px solid #1e1810;
+  color:#b8a98a;font-family:'Special Elite',cursive;font-size:13px;
+  padding:10px 14px;outline:none;transition:border-color .15s;
+  -webkit-appearance:none;appearance:none;
+}
+.form-field select{
+  cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%233a2e1a'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder{color:#2a2216;font-size:11px;letter-spacing:2px;}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus{border-color:#3a2a0e;}
+.form-field textarea{resize:vertical;min-height:100px;line-height:1.6;}
+.form-submit{
+  font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:5px;
+  text-transform:uppercase;width:100%;background:#2e1e0a;color:#c8a860;
+  border:1px solid #4e3418;padding:14px;cursor:pointer;transition:all .15s;margin-top:4px;
+}
+.form-submit:hover{background:#3a2810;color:#e0c080;}
+.form-confirm{
+  display:none;font-family:'Share Tech Mono',monospace;font-size:9px;
+  letter-spacing:4px;text-transform:uppercase;color:#6a5a2a;
+  margin-top:16px;text-align:center;
+}
+
+/* ===================== FOOTER ===================== */
+footer{
+  border-top:2px solid #141008;padding:48px 40px 40px;
+  text-align:center;background:#060402;
+}
+.footer-name{
+  font-family:'UnifrakturMaguntia',cursive;font-size:44px;color:#3a3020;
+  text-shadow:1px 1px 0 rgba(0,0,0,.9);margin-bottom:24px;display:block;
+}
+.footer-bc{
+  font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:5px;
+  text-transform:uppercase;color:#6a4a1a;border:1px solid #3a2a0e;
+  padding:10px 24px;text-decoration:none;display:inline-block;
+  margin-bottom:28px;transition:all .15s;
+}
+.footer-bc:hover{color:#c8a860;border-color:#5a3e18;background:#0e0a06;}
+.footer-links{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-bottom:28px;}
+.footer-links a{
+  font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:4px;
+  text-transform:uppercase;color:#2a2016;text-decoration:none;
+  transition:color .15s;cursor:pointer;
+}
+.footer-links a:hover{color:#6a5a3a;}
+.bottom-rule{
+  width:100%;height:1px;margin-bottom:28px;
+  background:repeating-linear-gradient(90deg,#181208 0,#1e1610 6px,#0a0806 6px,#0a0806 14px);
+}
+.footer-copy{font-family:'Share Tech Mono',monospace;font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#1e1a10;}
+
+/* ===================== RESPONSIVE ===================== */
+@media(max-width:700px){
+  nav{padding:10px 16px;}
+  .nav-links{gap:12px;}
+  .nav-links a{font-size:9px;letter-spacing:2px;}
+  .inner{padding:0 20px;}
+  .about-cols,.contact-grid{grid-template-columns:1fr;}
+  .records-grid{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:1fr 1fr;}
+  .show{grid-template-columns:50px 1fr;gap:12px;}
+  .show-act{display:none;}
+  .show:hover{margin:0;padding:18px 0;}
+  .player-controls{flex-wrap:wrap;}
+  .footer-links{gap:16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <a class="nav-logo" href="#hero">Human Debris</a>
+  <div class="nav-links">
+    <a href="#player">Music</a>
+    <a href="#gallery">Photos</a>
+    <a href="#about">Band</a>
+    <a href="#shows">Shows</a>
+    <a href="#contact">Booking</a>
+    <a href="https://humandebris.bandcamp.com" target="_blank" rel="noopener" class="nav-bc">Bandcamp ↗</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-smear"></div>
+  <div class="hero-texture"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-inner">
+    <div class="stamp-top">Seattle, WA &nbsp;·&nbsp; Since 1991 &nbsp;·&nbsp; Independent</div>
+    <span class="band-name" data-t="Human">Human</span>
+    <span class="band-name-2">Debris</span>
+    <div class="hand-rule"></div>
+    <p class="hero-tagline">Heavy. Filthy. Yours.</p>
+    <div class="cta-row">
+      <a class="btn btn-filled" href="#player">Listen Now</a>
+      <a class="btn btn-stamp" href="https://humandebris.bandcamp.com" target="_blank" rel="noopener">Bandcamp ↗</a>
+    </div>
+  </div>
+  <div class="scroll-hint">scroll</div>
+</section>
+
+<!-- ===== PLAYER ===== -->
+<div id="player" class="slab">
+<div class="inner">
+  <span class="kicker">/// latest record</span>
+  <h2 class="s-title">Rust Cathedral</h2>
+  <div class="ink-rule"></div>
+  <div class="player-wrap">
+    <div class="track-list-player">
+      <div class="pt active" onclick="selectTrack(this,0)">
+        <span class="pt-num">01</span><div class="pt-play"></div>
+        <span class="pt-name">Crawl</span><span class="pt-dur">4:12</span>
+      </div>
+      <div class="pt" onclick="selectTrack(this,1)">
+        <span class="pt-num">02</span><div class="pt-play"></div>
+        <span class="pt-name">Black Salt Road</span><span class="pt-dur">5:47</span>
+      </div>
+      <div class="pt" onclick="selectTrack(this,2)">
+        <span class="pt-num">03</span><div class="pt-play"></div>
+        <span class="pt-name">Rust Cathedral</span><span class="pt-dur">6:33</span>
+      </div>
+      <div class="pt" onclick="selectTrack(this,3)">
+        <span class="pt-num">04</span><div class="pt-play"></div>
+        <span class="pt-name">Nothing Heals</span><span class="pt-dur">3:58</span>
+      </div>
+      <div class="pt" onclick="selectTrack(this,4)">
+        <span class="pt-num">05</span><div class="pt-play"></div>
+        <span class="pt-name">Low Fire Gospel</span><span class="pt-dur">7:01</span>
+      </div>
+    </div>
+    <div class="progress-area">
+      <span class="time-label" id="time-cur">0:00</span>
+      <div class="progress-track" id="prog-track" onclick="scrub(event,this)">
+        <div class="progress-fill" id="prog-fill"></div>
+      </div>
+      <span class="time-label" id="time-tot">4:12</span>
+    </div>
+    <div class="player-controls">
+      <button class="ctrl-btn" onclick="prevTrack()">◀◀ Prev</button>
+      <button class="ctrl-btn" id="play-btn" onclick="togglePlay()">▶ Play</button>
+      <button class="ctrl-btn" onclick="nextTrack()">Next ▶▶</button>
+    </div>
+    <a href="https://humandebris.bandcamp.com" target="_blank" rel="noopener" class="bc-link">
+      ▸ Stream &amp; Download Full Album on Bandcamp ↗
+    </a>
+  </div>
+</div>
+</div>
+
+<!-- ===== GALLERY ===== -->
+<div id="gallery" class="slab">
+<div class="inner">
+  <span class="kicker">/// live shots</span>
+  <h2 class="s-title">Photos</h2>
+  <div class="ink-rule"></div>
+  <!--
+    TO ADD REAL PHOTOS:
+    Replace each <div class="gp-inner">...</div> block inside a .gp with:
+    <img src="your-photo.jpg" alt="Description">
+    Keep the .gp-overlay and .gp-caption divs in place.
+  -->
+  <div class="gallery-grid">
+    <div class="gp">
+      <div class="gp-inner"><div class="gp-placeholder">Add photo<br>here</div></div>
+      <div class="gp-overlay"><span class="gp-tag">View</span></div>
+      <div class="gp-caption">Funhouse — Seattle, 2023</div>
+    </div>
+    <div class="gp">
+      <div class="gp-inner"><div class="gp-placeholder">Add photo<br>here</div></div>
+      <div class="gp-overlay"><span class="gp-tag">View</span></div>
+      <div class="gp-caption">Dante's — Portland, 2023</div>
+    </div>
+    <div class="gp">
+      <div class="gp-inner"><div class="gp-placeholder">Add photo<br>here</div></div>
+      <div class="gp-overlay"><span class="gp-tag">View</span></div>
+      <div class="gp-caption">Slim's — San Francisco, 2022</div>
+    </div>
+    <div class="gp">
+      <div class="gp-inner"><div class="gp-placeholder">Add photo<br>here</div></div>
+      <div class="gp-overlay"><span class="gp-tag">View</span></div>
+      <div class="gp-caption">Studio — Rust Cathedral sessions, 2024</div>
+    </div>
+    <div class="gp">
+      <div class="gp-inner"><div class="gp-placeholder">Add photo<br>here</div></div>
+      <div class="gp-overlay"><span class="gp-tag">View</span></div>
+      <div class="gp-caption">The Echo — Los Angeles, 2022</div>
+    </div>
+    <div class="gp">
+      <div class="gp-inner"><div class="gp-placeholder">Add photo<br>here</div></div>
+      <div class="gp-overlay"><span class="gp-tag">View</span></div>
+      <div class="gp-caption">Neumo's — Seattle, 2024</div>
+    </div>
+  </div>
+  <p class="gallery-note">// Replace placeholders with real photos — see HTML comments</p>
+</div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<div id="about" class="slab">
+<div class="inner">
+  <div class="about-cols">
+    <div>
+      <span class="kicker">/// the band</span>
+      <h2 class="s-title">Who We Are</h2>
+      <div class="ink-rule"></div>
+      <div class="about-body">
+        <p>No management. No stylist. No deal. <em>Human Debris</em> has been playing the same dirty, loud, mean rock and roll since the early nineties — back when a four-track and a van was all you needed.</p>
+        <p>The music lives somewhere between a Black Sabbath riff and a Clutch groove, dragged through the mud of every bar floor we've played on the West Coast. If it doesn't feel like it cost something, we didn't do it right.</p>
+        <p>Three records. All self-released. All recorded analogue. <em>Take it or leave it.</em></p>
+      </div>
+      <div class="member-list">
+        <div class="member"><span class="member-name">Ray Macedo</span><span class="member-role">Vocals / Guitar</span></div>
+        <div class="member"><span class="member-name">Jo Strand</span><span class="member-role">Guitar</span></div>
+        <div class="member"><span class="member-name">Kev Pruitt</span><span class="member-role">Bass</span></div>
+        <div class="member"><span class="member-name">Dale Foss</span><span class="member-role">Drums</span></div>
+      </div>
+    </div>
+    <div>
+      <!--
+        TO ADD A BAND PHOTO:
+        Add inside .photo-frame: <img src="band.jpg" alt="Human Debris">
+        and remove the .photo-label div
+      -->
+      <div class="photo-frame">
+        <div class="tape t"></div>
+        <div class="tape b"></div>
+        <div class="photo-label">BAND PHOTO<br>— add yours —</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== RECORDS ===== -->
+<div id="records" class="slab">
+<div class="inner">
+  <span class="kicker">/// discography</span>
+  <h2 class="s-title">Records</h2>
+  <div class="ink-rule"></div>
+  <div class="records-grid">
+    <div class="record">
+      <span class="record-num">LP — 001</span>
+      <div class="new-badge">New — 2024</div>
+      <div class="record-title">Rust Cathedral</div>
+      <div class="record-year">2024 · Self-Released</div>
+      <div class="record-tracks">
+        <span>I. Crawl</span>
+        <span>II. Black Salt Road</span>
+        <span>III. Rust Cathedral</span>
+        <span>IV. Nothing Heals</span>
+        <span>V. Low Fire Gospel</span>
+      </div>
+      <a href="https://humandebris.bandcamp.com" target="_blank" rel="noopener" class="record-bc">Listen on Bandcamp ↗</a>
+    </div>
+    <div class="record">
+      <span class="record-num">LP — 002</span>
+      <div class="record-title">Bone Church</div>
+      <div class="record-year">2017 · Self-Released</div>
+      <div class="record-tracks">
+        <span>I. Hollow Year</span>
+        <span>II. Brick &amp; Ash</span>
+        <span>III. Bone Church</span>
+        <span>IV. Spit &amp; Wire</span>
+        <span>V. The Mule</span>
+      </div>
+      <a href="https://humandebris.bandcamp.com" target="_blank" rel="noopener" class="record-bc">Listen on Bandcamp ↗</a>
+    </div>
+    <div class="record">
+      <span class="record-num">LP — 003</span>
+      <div class="record-title">Swine Hymn</div>
+      <div class="record-year">2009 · Self-Released</div>
+      <div class="record-tracks">
+        <span>I. Opener</span>
+        <span>II. Flood Tongue</span>
+        <span>III. Swine Hymn</span>
+        <span>IV. Dead Weight</span>
+        <span>V. Gutter Prayer</span>
+      </div>
+      <a href="https://humandebris.bandcamp.com" target="_blank" rel="noopener" class="record-bc">Listen on Bandcamp ↗</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== SHOWS ===== -->
+<div id="shows" class="slab">
+<div class="inner">
+  <span class="kicker">/// live dates</span>
+  <h2 class="s-title">Shows</h2>
+  <div class="ink-rule"></div>
+  <div class="show-list">
+    <div class="show">
+      <div class="show-date"><div class="show-mo">Apr</div><div class="show-dy">12</div></div>
+      <div><div class="show-venue">The Funhouse</div><div class="show-loc">Seattle, WA</div></div>
+      <div class="show-act">Headline<br>+ 2 bands</div>
+    </div>
+    <div class="show">
+      <div class="show-date"><div class="show-mo">Apr</div><div class="show-dy">19</div></div>
+      <div><div class="show-venue">Dante's</div><div class="show-loc">Portland, OR</div></div>
+      <div class="show-act">Headline</div>
+    </div>
+    <div class="show">
+      <div class="show-date"><div class="show-mo">May</div><div class="show-dy">03</div></div>
+      <div><div class="show-venue">Slim's</div><div class="show-loc">San Francisco, CA</div></div>
+      <div class="show-act">w/ Iron Lung<br>+ Cursed Oak</div>
+    </div>
+    <div class="show">
+      <div class="show-date"><div class="show-mo">May</div><div class="show-dy">10</div></div>
+      <div><div class="show-venue">The Echo</div><div class="show-loc">Los Angeles, CA</div></div>
+      <div class="show-act">Headline</div>
+    </div>
+    <div class="show">
+      <div class="show-date"><div class="show-mo">May</div><div class="show-dy">24</div></div>
+      <div><div class="show-venue">Neumo's</div><div class="show-loc">Seattle, WA</div></div>
+      <div class="show-act">Record Release<br>Full Band Set</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== MAILING LIST ===== -->
+<div id="mailing" class="slab">
+<div class="inner">
+  <span class="kicker">/// stay in the loop</span>
+  <h2 class="s-title">Mailing List</h2>
+  <div class="ink-rule"></div>
+  <div class="list-wrap">
+    <p class="list-body">No spam. No algorithms. Just an email when we drop something new or roll through your town. Old school.</p>
+    <div class="field-row">
+      <input type="text" id="ml-name" placeholder="Your name">
+      <input type="email" id="ml-email" placeholder="Your email address">
+      <button class="sub-btn" onclick="submitList()">Sign Up</button>
+    </div>
+    <div class="list-note">No bullshit. Unsubscribe anytime.</div>
+    <div class="success-msg" id="list-confirm">✓ &nbsp; You're on the list. We'll be in touch.</div>
+  </div>
+</div>
+</div>
+
+<!-- ===== CONTACT ===== -->
+<div id="contact" class="slab">
+<div class="inner">
+  <span class="kicker">/// get in touch</span>
+  <h2 class="s-title">Booking</h2>
+  <div class="ink-rule"></div>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-body">For booking, press, licensing, or general inquiries — fill out the form or reach us direct. We handle everything ourselves, so expect a real response.</p>
+      <div class="contact-detail">
+        <div class="cd">
+          <div class="cd-label">Booking</div>
+          <div class="cd-val">booking@humandebris.com</div>
+        </div>
+        <div class="cd">
+          <div class="cd-label">Press</div>
+          <div class="cd-val">press@humandebris.com</div>
+        </div>
+        <div class="cd">
+          <div class="cd-label">Bandcamp</div>
+          <div class="cd-val">
+            <a href="https://humandebris.bandcamp.com" target="_blank" rel="noopener">humandebris.bandcamp.com ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-wrap">
+      <div class="form-field">
+        <label>Name</label>
+        <input type="text" id="c-name" placeholder="Your name">
+      </div>
+      <div class="form-field">
+        <label>Email</label>
+        <input type="email" id="c-email" placeholder="your@email.com">
+      </div>
+      <div class="form-field">
+        <label>Enquiry type</label>
+        <select id="c-type">
+          <option value="">— Select —</option>
+          <option>Booking / Shows</option>
+          <option>Press / Interview</option>
+          <option>Licensing</option>
+          <option>General</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Message</label>
+        <textarea id="c-msg" placeholder="What's on your mind..."></textarea>
+      </div>
+      <button class="form-submit" onclick="submitForm()">Send Message</button>
+      <div class="form-confirm" id="form-confirm">✓ &nbsp; Message received. We'll get back to you.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="bottom-rule"></div>
+  <span class="footer-name">Human Debris</span>
+  <a href="https://humandebris.bandcamp.com" target="_blank" rel="noopener" class="footer-bc">Stream on Bandcamp ↗</a>
+  <div class="footer-links">
+    <a href="#player">Music</a>
+    <a href="#gallery">Photos</a>
+    <a href="#about">Band</a>
+    <a href="#shows">Shows</a>
+    <a href="#mailing">Mailing List</a>
+    <a href="#contact">Booking</a>
+  </div>
+  <div class="footer-copy">© Human Debris — All rights reserved — Seattle, WA — Est. 1991</div>
+</footer>
+
+<script>
+// ===== PLAYER =====
+const durations = ['4:12','5:47','6:33','3:58','7:01'];
+const durSecs   = [252, 347, 393, 238, 421];
+let currentTrack = 0;
+let playing = false;
+let progPct = 0;
+let ticker = null;
+
+function selectTrack(el, idx) {
+  document.querySelectorAll('.pt').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  currentTrack = idx;
+  progPct = 0;
+  document.getElementById('time-tot').textContent = durations[idx];
+  document.getElementById('time-cur').textContent = '0:00';
+  document.getElementById('prog-fill').style.width = '0%';
+  playing = true;
+  updatePlayBtn();
+  startTick();
+}
+
+function togglePlay() {
+  playing = !playing;
+  updatePlayBtn();
+  if (playing) startTick();
+  else clearInterval(ticker);
+}
+
+function updatePlayBtn() {
+  const btn = document.getElementById('play-btn');
+  if (playing) {
+    btn.textContent = '▐▐ Pause';
+    btn.classList.add('playing');
+  } else {
+    btn.textContent = '▶ Play';
+    btn.classList.remove('playing');
+  }
+}
+
+function nextTrack() {
+  const tracks = document.querySelectorAll('.pt');
+  currentTrack = (currentTrack + 1) % tracks.length;
+  selectTrack(tracks[currentTrack], currentTrack);
+}
+
+function prevTrack() {
+  const tracks = document.querySelectorAll('.pt');
+  currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+  selectTrack(tracks[currentTrack], currentTrack);
+}
+
+function scrub(e, bar) {
+  const rect = bar.getBoundingClientRect();
+  progPct = Math.max(0, Math.min(100, (e.clientX - rect.left) / rect.width * 100));
+  updateBar();
+}
+
+function updateBar() {
+  const total = durSecs[currentTrack];
+  const elapsed = Math.floor(progPct / 100 * total);
+  const m = Math.floor(elapsed / 60);
+  const s = elapsed % 60;
+  document.getElementById('time-cur').textContent = m + ':' + (s < 10 ? '0' : '') + s;
+  document.getElementById('prog-fill').style.width = progPct.toFixed(1) + '%';
+}
+
+function startTick() {
+  clearInterval(ticker);
+  ticker = setInterval(() => {
+    if (!playing) return;
+    progPct += 100 / durSecs[currentTrack];
+    if (progPct >= 100) { progPct = 0; nextTrack(); return; }
+    updateBar();
+  }, 1000);
+}
+
+// ===== MAILING LIST =====
+function submitList() {
+  const email = document.getElementById('ml-email').value.trim();
+  const name  = document.getElementById('ml-name').value.trim();
+  if (!email || !email.includes('@')) return;
+  document.getElementById('list-confirm').style.display = 'block';
+  document.getElementById('ml-email').value = '';
+  document.getElementById('ml-name').value = '';
+}
+
+// ===== CONTACT FORM =====
+function submitForm() {
+  const name  = document.getElementById('c-name').value.trim();
+  const email = document.getElementById('c-email').value.trim();
+  const msg   = document.getElementById('c-msg').value.trim();
+  if (!name || !email || !msg) return;
+  document.getElementById('form-confirm').style.display = 'block';
+  document.getElementById('c-name').value = '';
+  document.getElementById('c-email').value = '';
+  document.getElementById('c-msg').value = '';
+  document.getElementById('c-type').value = '';
+}
+
+// ===== SMOOTH NAV for hash links =====
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
+  });
+});
+</script>
+</body>
+</html>
