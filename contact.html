@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Booking — HumanDebris</title>
+  <meta name="description" content="Book HumanDebris for your venue or event. Indianapolis old school metal.">
+  <meta property="og:title" content="HumanDebris — Booking">
+  <meta property="og:image" content="https://humandebris.com/assets/logos/logo-primary.webp">
+  <link rel="icon" href="assets/logos/logo-hands.webp">
+  <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Oswald:wght@300;400;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .contact-section {
+      padding: 60px 0 80px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ── Email Block ── */
+    .contact-email-block {
+      text-align: center;
+      padding: 40px 0;
+    }
+    .contact-label {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      color: var(--gray);
+      margin-bottom: 12px;
+    }
+    .contact-email {
+      font-family: 'Metal Mania', cursive;
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      color: var(--blood);
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: text-shadow 0.2s;
+    }
+    .contact-email:hover {
+      color: var(--off-white);
+      text-shadow: 0 0 20px rgba(204,0,0,0.5);
+    }
+
+    /* ── Contact Form ── */
+    .contact-form-wrap {
+      padding: 40px 0;
+    }
+    .contact-form-wrap h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      background: var(--deep);
+      border: 1px solid var(--dark-red);
+      color: var(--off-white);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      padding: 14px 18px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: var(--gray);
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--blood);
+      box-shadow: 0 0 10px rgba(204,0,0,0.2);
+    }
+    .contact-form textarea { resize: vertical; min-height: 150px; }
+    .contact-form .btn {
+      align-self: flex-start;
+      margin-top: 8px;
+    }
+
+    /* ── Social Links ── */
+    .contact-socials {
+      text-align: center;
+      padding: 40px 0;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">HUMANDEBRIS</a>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="shows.html">SHOWS</a></li>
+      <li><a href="music.html">MUSIC</a></li>
+      <li><a href="band.html">BAND</a></li>
+      <li><a href="merch.html">MERCH</a></li>
+      <li><a href="gallery.html">GALLERY</a></li>
+      <li><a href="contact.html" class="nav-cta">BOOK US</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-hero">
+    <h1>BOOKING & CONTACT</h1>
+    <p>For booking inquiries, reach out directly</p>
+  </section>
+
+  <section class="container contact-section">
+
+    <!-- Email -->
+    <div class="contact-email-block fade-in">
+      <p class="contact-label">BOOKING EMAIL</p>
+      <a href="mailto:Humandebrisband@gmail.com" class="contact-email">
+        Humandebrisband@gmail.com
+      </a>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Form -->
+    <div class="contact-form-wrap fade-in">
+      <h2>SEND A MESSAGE</h2>
+      <form action="https://formspree.io/f/xojplpob" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="YOUR NAME" required>
+        <input type="email" name="email" placeholder="YOUR EMAIL" required>
+        <input type="text" name="venue" placeholder="VENUE / EVENT">
+        <input type="text" name="date" placeholder="EVENT DATE">
+        <textarea name="message" placeholder="YOUR MESSAGE" rows="6" required></textarea>
+        <button type="submit" class="btn">SEND IT →</button>
+      </form>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Socials -->
+    <div class="contact-socials fade-in">
+      <a href="https://facebook.com/profile.php?id=61583589017371" class="btn btn-outline" target="_blank">FACEBOOK →</a>
+      <a href="https://www.youtube.com/playlist?list=OLAK5uy_nDLS0WcJCeptWyizuUw6TR9iF5Icl0qGE" class="btn btn-outline" target="_blank">YOUTUBE →</a>
+    </div>
+
+  </section>
+
+  <footer>
+    <img src="assets/logos/logo-primary.webp" alt="HumanDebris" class="footer-logo">
+    <p class="footer-tagline">Indianapolis Old School Metal</p>
+    <div class="footer-socials">
+      <a href="https://facebook.com/profile.php?id=61583589017371" target="_blank">Facebook</a>
+      <span>·</span>
+      <a href="https://www.youtube.com/playlist?list=OLAK5uy_nDLS0WcJCeptWyizuUw6TR9iF5Icl0qGE" target="_blank">YouTube</a>
+    </div>
+    <p class="footer-copy">© 2025 HumanDebris. All Rights Reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

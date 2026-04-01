@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shows — HumanDebris</title>
+  <meta name="description" content="HumanDebris upcoming shows and past performances in Indianapolis and beyond.">
+  <meta property="og:title" content="HumanDebris — Shows">
+  <meta property="og:description" content="Upcoming shows and events">
+  <meta property="og:image" content="https://humandebris.com/assets/logos/logo-primary.webp">
+  <link rel="icon" href="assets/logos/logo-hands.webp">
+  <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Oswald:wght@300;400;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .shows-list {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+    .show-card {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      background: var(--deep);
+      border: 1px solid var(--dark-red);
+      padding: 24px 30px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      transition: border-color 0.2s;
+    }
+    .show-card:hover {
+      border-color: var(--blood);
+    }
+    .show-card.past {
+      opacity: 0.5;
+      border-color: var(--dim);
+    }
+    .show-card.past:hover { opacity: 0.7; }
+    .show-date {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 70px;
+    }
+    .show-date .month {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--blood);
+    }
+    .show-date .day {
+      font-family: 'Metal Mania', cursive;
+      font-size: 2.5rem;
+      line-height: 1;
+      color: var(--off-white);
+    }
+    .show-date .year {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.75rem;
+      color: var(--gray);
+    }
+    .show-info { flex: 1; min-width: 200px; }
+    .show-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+    .show-location, .show-time {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+    .past-badge {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      color: var(--dim);
+      border: 1px solid var(--dim);
+      padding: 6px 14px;
+    }
+    .no-shows {
+      font-family: 'Courier Prime', monospace;
+      color: var(--gray);
+      text-align: center;
+      padding: 40px 0;
+    }
+    #shows-container {
+      padding: 40px 0 80px;
+    }
+    #shows-container h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 768px) {
+      .show-card { padding: 20px; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">HUMANDEBRIS</a>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="shows.html">SHOWS</a></li>
+      <li><a href="music.html">MUSIC</a></li>
+      <li><a href="band.html">BAND</a></li>
+      <li><a href="merch.html">MERCH</a></li>
+      <li><a href="gallery.html">GALLERY</a></li>
+      <li><a href="contact.html" class="nav-cta">BOOK US</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-hero">
+    <h1>SHOWS</h1>
+    <p>Upcoming & Past Performances</p>
+  </section>
+
+  <section class="container" id="shows-container">
+    <!-- Rendered by shows.js -->
+  </section>
+
+  <footer>
+    <img src="assets/logos/logo-primary.webp" alt="HumanDebris" class="footer-logo">
+    <p class="footer-tagline">Indianapolis Old School Metal</p>
+    <div class="footer-socials">
+      <a href="https://facebook.com/profile.php?id=61583589017371" target="_blank">Facebook</a>
+      <span>·</span>
+      <a href="https://www.youtube.com/playlist?list=OLAK5uy_nDLS0WcJCeptWyizuUw6TR9iF5Icl0qGE" target="_blank">YouTube</a>
+    </div>
+    <p class="footer-copy">© 2025 HumanDebris. All Rights Reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/shows.js"></script>
+</body>
+</html>

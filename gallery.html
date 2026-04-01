@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — HumanDebris</title>
+  <meta name="description" content="HumanDebris photos and live footage. Indianapolis old school metal.">
+  <meta property="og:title" content="HumanDebris — Gallery">
+  <meta property="og:image" content="https://humandebris.com/assets/logos/logo-primary.webp">
+  <link rel="icon" href="assets/logos/logo-hands.webp">
+  <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Oswald:wght@300;400;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    /* ── Gallery Grid ── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      padding: 60px 0;
+    }
+    .gallery-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border: 1px solid var(--dark-red);
+      cursor: pointer;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .gallery-img:hover {
+      transform: scale(1.02);
+      border-color: var(--blood);
+    }
+
+    /* ── Lightbox ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+    }
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      background: none;
+      border: none;
+      color: var(--off-white);
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 20px;
+      transition: color 0.2s;
+      z-index: 10001;
+    }
+    .lightbox-close:hover,
+    .lightbox-prev:hover,
+    .lightbox-next:hover { color: var(--blood); }
+    .lightbox-close { top: 10px; right: 20px; font-size: 2.5rem; }
+    .lightbox-prev  { left: 10px; top: 50%; transform: translateY(-50%); font-size: 3rem; }
+    .lightbox-next  { right: 10px; top: 50%; transform: translateY(-50%); font-size: 3rem; }
+
+    /* ── Video Section ── */
+    .video-grid {
+      padding: 40px 0 80px;
+    }
+    .video-grid h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border: 1px solid var(--dark-red);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .gallery-placeholder {
+      text-align: center;
+      padding: 80px 20px;
+      font-family: 'Courier Prime', monospace;
+      color: var(--gray);
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .gallery-img { height: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">HUMANDEBRIS</a>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="shows.html">SHOWS</a></li>
+      <li><a href="music.html">MUSIC</a></li>
+      <li><a href="band.html">BAND</a></li>
+      <li><a href="merch.html">MERCH</a></li>
+      <li><a href="gallery.html">GALLERY</a></li>
+      <li><a href="contact.html" class="nav-cta">BOOK US</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-hero">
+    <h1>GALLERY</h1>
+    <p>Photos & Live Footage</p>
+  </section>
+
+  <!--
+  ═══ TO ADD PHOTOS ═══
+  1. Save photos to /assets/photos/ (name them live-01.jpg, live-02.jpg, etc.)
+  2. Compress with squoosh.app (target under 300KB each)
+  3. Add an <img> tag below for each photo
+  -->
+
+  <section class="container gallery-grid" id="gallery">
+    <!-- Band photo -->
+    <img src="assets/photos/band-hero.webp" class="gallery-img fade-in" alt="HumanDebris band photo">
+
+    <!-- Logo art as gallery placeholders — replace with live show photos -->
+    <img src="assets/logos/logo-primary.webp" class="gallery-img fade-in" alt="HumanDebris logo" style="object-fit:contain;background:var(--black);padding:20px;">
+    <img src="assets/logos/logo-hands.webp" class="gallery-img fade-in" alt="HumanDebris reaching hands logo" style="object-fit:contain;background:#fff;padding:20px;">
+    <img src="assets/logos/logo-heart.webp" class="gallery-img fade-in" alt="HumanDebris heart logo" style="object-fit:contain;background:#fff;padding:20px;">
+    <img src="assets/logos/logo-hand.webp" class="gallery-img fade-in" alt="HumanDebris hand logo" style="object-fit:contain;background:var(--black);padding:20px;">
+
+    <!--
+    Add live show photos here:
+    <img src="assets/photos/live-01.jpg" class="gallery-img fade-in" alt="HumanDebris live">
+    <img src="assets/photos/live-02.jpg" class="gallery-img fade-in" alt="HumanDebris live">
+    -->
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lb-close">✕</button>
+    <button class="lightbox-prev" id="lb-prev">‹</button>
+    <img src="" id="lb-image" alt="">
+    <button class="lightbox-next" id="lb-next">›</button>
+  </div>
+
+  <hr class="section-divider" style="max-width:800px;margin:0 auto;">
+
+  <!-- Live Footage -->
+  <section class="container video-grid fade-in">
+    <h2>LIVE FOOTAGE</h2>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/A4BcmsXN_kc" title="HumanDebris Live" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <!--
+    Add more videos:
+    <div class="video-wrap" style="margin-top:30px;">
+      <iframe src="https://www.youtube.com/embed/NEW_VIDEO_ID" title="HumanDebris Live" allowfullscreen loading="lazy"></iframe>
+    </div>
+    -->
+  </section>
+
+  <footer>
+    <img src="assets/logos/logo-primary.webp" alt="HumanDebris" class="footer-logo">
+    <p class="footer-tagline">Indianapolis Old School Metal</p>
+    <div class="footer-socials">
+      <a href="https://facebook.com/profile.php?id=61583589017371" target="_blank">Facebook</a>
+      <span>·</span>
+      <a href="https://www.youtube.com/playlist?list=OLAK5uy_nDLS0WcJCeptWyizuUw6TR9iF5Icl0qGE" target="_blank">YouTube</a>
+    </div>
+    <p class="footer-copy">© 2025 HumanDebris. All Rights Reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

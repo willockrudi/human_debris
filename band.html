@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Band — HumanDebris</title>
+  <meta name="description" content="Meet HumanDebris — Billy Lee, Jef Jones, Jared Asher, Ritchie Wilkison, and Peter Wickes. Indianapolis old school metal.">
+  <meta property="og:title" content="HumanDebris — The Band">
+  <meta property="og:image" content="https://humandebris.com/assets/logos/logo-primary.webp">
+  <link rel="icon" href="assets/logos/logo-hands.webp">
+  <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Oswald:wght@300;400;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .band-bio {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 40px 40px;
+      text-align: center;
+    }
+    .band-bio p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      margin-bottom: 24px;
+      color: var(--off-white);
+    }
+    .band-photo-full {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 60px;
+      display: block;
+      border: 1px solid var(--dark-red);
+      object-fit: cover;
+      object-position: center 20%;
+      max-height: 500px;
+    }
+
+    /* ── Members Grid ── */
+    .members-section {
+      padding: 40px 0 80px;
+    }
+    .members-section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .member-card {
+      background: var(--deep);
+      border: 1px solid var(--dark-red);
+      text-align: center;
+      padding: 0 0 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .member-card:hover {
+      border-color: var(--blood);
+      transform: translateY(-4px);
+    }
+    .member-photo {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center 20%;
+      margin-bottom: 16px;
+    }
+    .member-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+    .member-role {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.8rem;
+      color: var(--blood);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ── Logos Showcase ── */
+    .logos-section {
+      padding: 60px 0 80px;
+      text-align: center;
+    }
+    .logos-section h2 { margin-bottom: 40px; }
+    .logos-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .logos-grid img {
+      height: 120px;
+      width: 120px;
+      object-fit: contain;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .logos-grid img:hover { opacity: 1; }
+
+    @media (max-width: 768px) {
+      .band-bio { padding: 40px 20px 20px; }
+      .members-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .member-photo { height: 160px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">HUMANDEBRIS</a>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="shows.html">SHOWS</a></li>
+      <li><a href="music.html">MUSIC</a></li>
+      <li><a href="band.html">BAND</a></li>
+      <li><a href="merch.html">MERCH</a></li>
+      <li><a href="gallery.html">GALLERY</a></li>
+      <li><a href="contact.html" class="nav-cta">BOOK US</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-hero">
+    <h1>THE BAND</h1>
+    <p>Indianapolis, Indiana</p>
+  </section>
+
+  <!-- Band Photo -->
+  <div class="container fade-in" style="padding-top: 60px;">
+    <!-- Replace with a clean band photo when available -->
+    <img src="assets/photos/band-hero.webp" alt="HumanDebris band photo" class="band-photo-full">
+  </div>
+
+  <!-- Bio -->
+  <div class="band-bio fade-in">
+    <p>HumanDebris was born out of Indianapolis, Indiana — five musicians who'd been around long enough to know what real metal sounds like, and fed up enough to do something about it. Billy Lee, Jef Jones, Jared Asher, Ritchie Wilkison, and Peter Wickes came together with a shared obsession: the raw, unfiltered heaviness of the bands that built the genre. No trends. No gimmicks. Just the riff, the groove, and the grind.</p>
+    <p>Drawing from the dark cathedral sound of Black Sabbath, the locomotive fury of Motorhead, the brooding pressure of Soundgarden, the speed and aggression of Slayer, and the chaotic energy of Bad Brains — HumanDebris forges something that feels both ancient and alive. Indianapolis never knew it needed this band until they hit the stage.</p>
+  </div>
+
+  <hr class="section-divider" style="max-width:800px;margin:20px auto 0;">
+
+  <!-- Members -->
+  <section class="container members-section">
+    <h2>MEMBERS</h2>
+    <div class="members-grid">
+      <!-- UPDATE: Replace band-hero.webp with individual member photos when available -->
+      <div class="member-card fade-in">
+        <img src="assets/logos/logo-heart.webp" alt="Billy Lee" class="member-photo" style="object-fit:contain;background:var(--black);padding:20px;">
+        <h3>BILLY LEE</h3>
+        <p class="member-role">Guitar</p>
+      </div>
+      <div class="member-card fade-in">
+        <img src="assets/logos/logo-hands.webp" alt="Jef Jones" class="member-photo" style="object-fit:contain;background:var(--black);padding:20px;">
+        <h3>JEF JONES</h3>
+        <p class="member-role">Guitar</p>
+      </div>
+      <div class="member-card fade-in">
+        <img src="assets/logos/logo-hand.webp" alt="Jared Asher" class="member-photo" style="object-fit:contain;background:var(--black);padding:20px;">
+        <h3>JARED ASHER</h3>
+        <p class="member-role">Drums</p>
+      </div>
+      <div class="member-card fade-in">
+        <img src="assets/logos/logo-heart.webp" alt="Ritchie Wilkison" class="member-photo" style="object-fit:contain;background:var(--black);padding:20px;">
+        <h3>RITCHIE WILKISON</h3>
+        <p class="member-role">Vocals</p>
+      </div>
+      <div class="member-card fade-in">
+        <img src="assets/logos/logo-hands.webp" alt="Peter Wickes" class="member-photo" style="object-fit:contain;background:var(--black);padding:20px;">
+        <h3>PETER WICKES</h3>
+        <p class="member-role">Bass</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <img src="assets/logos/logo-primary.webp" alt="HumanDebris" class="footer-logo">
+    <p class="footer-tagline">Indianapolis Old School Metal</p>
+    <div class="footer-socials">
+      <a href="https://facebook.com/profile.php?id=61583589017371" target="_blank">Facebook</a>
+      <span>·</span>
+      <a href="https://www.youtube.com/playlist?list=OLAK5uy_nDLS0WcJCeptWyizuUw6TR9iF5Icl0qGE" target="_blank">YouTube</a>
+    </div>
+    <p class="footer-copy">© 2025 HumanDebris. All Rights Reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
