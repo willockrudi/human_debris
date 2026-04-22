@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Merch — HumanDebris</title>
-  <meta name="description" content="Official HumanDebris merch. Ships direct from the band. Indianapolis old school metal.">
+  <meta name="description" content="Official HumanDebris merch. Handmade by the band. Indianapolis old school metal.">
   <meta property="og:title" content="HumanDebris — Merch">
   <meta property="og:image" content="https://humandebris.com/assets/merch/unisex-basic-softstyle-t-shirt-black-front-69cd6b487fd8b.jpg">
   <link rel="icon" href="assets/logos/logo-hands.webp">
@@ -70,12 +70,6 @@
       justify-content: center;
     }
     .product-info h2 { font-size: 2rem; margin-bottom: 8px; }
-    .product-price {
-      font-family: 'Metal Mania', cursive;
-      font-size: 2rem;
-      color: var(--blood);
-      margin-bottom: 20px;
-    }
     .product-desc {
       color: var(--off-white);
       font-weight: 300;
@@ -89,79 +83,42 @@
       margin-bottom: 30px;
       line-height: 2;
     }
-    .size-selector { margin-bottom: 24px; }
-    .size-label {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 3px;
-      color: var(--gray);
+
+    /* ── "Get one at a show" block ── */
+    .grab-block {
+      border: 1px solid var(--dark-red);
+      padding: 24px 28px;
+      background: var(--black);
+      margin-top: 8px;
+    }
+    .grab-headline {
+      font-family: 'Metal Mania', cursive;
+      font-size: 1.6rem;
+      color: var(--blood);
+      letter-spacing: 2px;
       margin-bottom: 10px;
+      text-shadow: 0 0 15px rgba(204,0,0,0.3);
+    }
+    .grab-lines {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.85rem;
+      color: var(--off-white);
+      letter-spacing: 2px;
+      line-height: 2;
+    }
+    .grab-lines span {
       display: block;
     }
-    .size-options { display: flex; gap: 8px; flex-wrap: wrap; }
-    .size-btn {
-      font-family: 'Oswald', sans-serif;
-      font-weight: 600;
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      padding: 10px 18px;
-      border: 1px solid var(--dark-red);
-      background: transparent;
-      color: var(--off-white);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .size-btn:hover,
-    .size-btn.selected {
-      background: var(--blood);
-      color: var(--black);
-      border-color: var(--blood);
-    }
-    .order-btn {
-      display: inline-block;
-      font-family: 'Oswald', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      padding: 16px 40px;
-      border: 2px solid var(--blood);
-      background: var(--blood);
-      color: var(--black);
-      cursor: pointer;
-      transition: all 0.2s;
-      text-decoration: none;
-      text-align: center;
-    }
-    .order-btn:hover {
-      background: transparent;
-      color: var(--blood);
-      box-shadow: 0 0 20px rgba(204,0,0,0.4);
-    }
-    .shipping-note {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.75rem;
+    .grab-lines .dim {
       color: var(--gray);
-      margin-top: 16px;
-      line-height: 1.6;
     }
-    .more-coming {
-      text-align: center;
-      padding: 60px 40px;
-      border-top: 1px solid var(--dark-red);
-    }
-    .more-coming h2 { margin-bottom: 16px; }
-    .more-coming p {
-      font-family: 'Courier Prime', monospace;
-      color: var(--gray);
-      font-size: 0.85rem;
-      margin-bottom: 30px;
-    }
+
     @media (max-width: 768px) {
       .product-card { grid-template-columns: 1fr; }
       .product-main-img { height: 350px; }
       .product-info { padding: 24px 20px; }
       .merch-intro { padding: 30px 20px 0; }
+      .grab-headline { font-size: 1.3rem; }
     }
   </style>
 </head>
@@ -182,7 +139,7 @@
 
   <section class="page-hero">
     <h1>MERCH</h1>
-    <p>Official gear — shipped direct from the band</p>
+    <p>Handmade by the band</p>
   </section>
 
   <div class="merch-intro fade-in">
@@ -203,34 +160,22 @@
       </div>
       <div class="product-info">
         <h2>HUMANDEBRIS LOGO TEE</h2>
-        <div class="product-price">$30</div>
         <p class="product-desc">The dripping red HumanDebris logo printed bold across the chest on a premium heavyweight softstyle tee. Built for the pit, the show, and the street.</p>
         <p class="product-details">
           Unisex Gildan Softstyle · 100% Ring-spun Cotton<br>
           Pre-shrunk · Semi-fitted · Black
         </p>
-        <div class="size-selector">
-          <span class="size-label">SELECT SIZE</span>
-          <div class="size-options">
-            <button class="size-btn" onclick="selectSize(this, 'order-1')">S</button>
-            <button class="size-btn" onclick="selectSize(this, 'order-1')">M</button>
-            <button class="size-btn" onclick="selectSize(this, 'order-1')">L</button>
-            <button class="size-btn" onclick="selectSize(this, 'order-1')">XL</button>
-            <button class="size-btn" onclick="selectSize(this, 'order-1')">2XL</button>
-            <button class="size-btn" onclick="selectSize(this, 'order-1')">3XL</button>
+
+        <div class="grab-block">
+          <p class="grab-headline">GET ONE AT A SHOW</p>
+          <div class="grab-lines">
+            <span>Handmade by the band</span>
+            <span class="dim">Online shipping coming soon</span>
           </div>
         </div>
-        <a id="order-1" href="mailto:Humandebrisband@gmail.com?subject=MERCH%20ORDER%20—%20HumanDebris%20Logo%20Tee&body=I%27d%20like%20to%20order%3A%0A%0AProduct%3A%20HumanDebris%20Logo%20Tee%20—%20Black%0ASize%3A%20%0AQuantity%3A%201%0A%0AMy%20shipping%20info%3A%0AName%3A%0AAddress%3A%0ACity%2FState%2FZip%3A" class="order-btn">ORDER NOW →</a>
-        <p class="shipping-note">Ships direct from Indianapolis. Email us or DM on Facebook to arrange payment via Venmo, PayPal, or cash at shows.</p>
       </div>
     </div>
 
-  </section>
-
-  <section class="more-coming fade-in">
-    <h2>MORE MERCH COMING SOON</h2>
-    <p>Hoodies, stickers, hats, and posters on the way. Follow us on Facebook for drops.</p>
-    <a href="https://facebook.com/profile.php?id=61583589017371" class="btn btn-outline" target="_blank">FOLLOW US →</a>
   </section>
 
   <footer>
@@ -257,16 +202,6 @@
         });
       });
     });
-
-    // Size selector — updates mailto link with selected size
-    function selectSize(btn, orderId) {
-      btn.parentElement.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      const size = btn.textContent;
-      const orderBtn = document.getElementById(orderId);
-      const base = 'mailto:Humandebrisband@gmail.com?subject=MERCH%20ORDER%20—%20HumanDebris%20Logo%20Tee&body=I%27d%20like%20to%20order%3A%0A%0AProduct%3A%20HumanDebris%20Logo%20Tee%20—%20Black%0ASize%3A%20' + encodeURIComponent(size) + '%0AQuantity%3A%201%0A%0AMy%20shipping%20info%3A%0AName%3A%0AAddress%3A%0ACity%2FState%2FZip%3A';
-      orderBtn.href = base;
-    }
   </script>
 </body>
 </html>
