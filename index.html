@@ -35,8 +35,6 @@
       object-fit: cover;
       z-index: 0;
     }
-    .hero-video::-webkit-media-controls { display: none !important; }
-    .hero-video::-webkit-media-controls-start-playback-button { display: none !important; }
     .hero-overlay {
       position: absolute;
       inset: 0;
@@ -83,14 +81,14 @@
     .ticker {
       display: flex;
       white-space: nowrap;
-      animation: ticker 30s linear infinite;
+      animation: ticker 20s linear infinite;
     }
     .ticker span {
       font-family: 'Courier Prime', monospace;
       font-size: 0.85rem;
       color: var(--black);
       font-weight: 700;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
     }
 
     /* ── Latest Music ── */
@@ -123,47 +121,12 @@
       border: 0;
     }
 
-    /* ── Next Show / Book Us block ── */
+    /* ── Next Show Card ── */
     .home-shows {
       padding: 80px 40px;
       text-align: center;
     }
     .home-shows h2 { margin-bottom: 40px; }
-
-    /* Placeholder when no upcoming shows */
-    .no-show-card {
-      background: var(--deep);
-      border: 1px solid var(--dark-red);
-      padding: 50px 40px;
-      max-width: 700px;
-      margin: 0 auto 30px;
-      text-align: center;
-    }
-    .no-show-card .label {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 4px;
-      color: var(--gray);
-      margin-bottom: 16px;
-    }
-    .no-show-card .headline {
-      font-family: 'Metal Mania', cursive;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      color: var(--blood);
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-      text-shadow: 0 0 25px rgba(204,0,0,0.4);
-    }
-    .no-show-card .sub {
-      font-family: 'Courier Prime', monospace;
-      color: var(--off-white);
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      margin-bottom: 30px;
-      line-height: 1.8;
-    }
-
-    /* Legacy featured card (kept for when shows return) */
     .show-card.featured {
       display: flex;
       align-items: center;
@@ -242,7 +205,6 @@
       .home-music, .home-shows { padding: 60px 20px; }
       .band-strip-photo { height: 400px; }
       .show-card.featured { padding: 20px; }
-      .no-show-card { padding: 36px 24px; }
     }
   </style>
 </head>
@@ -264,7 +226,7 @@
 
   <!-- ══ HERO ══ -->
   <section class="hero">
-    <video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/logos/logo-primary.webp" class="hero-video" id="hero-vid">
+    <video autoplay muted loop playsinline class="hero-video">
       <source src="assets/video/hero.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
@@ -281,10 +243,10 @@
   <!-- ══ TICKER ══ -->
   <div class="ticker-wrap">
     <div class="ticker">
-      <span>⚡ INDIANAPOLIS OLD SCHOOL METAL ⚡ BOOK US ⚡ LISTEN NOW &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-      <span>⚡ INDIANAPOLIS OLD SCHOOL METAL ⚡ BOOK US ⚡ LISTEN NOW &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-      <span>⚡ INDIANAPOLIS OLD SCHOOL METAL ⚡ BOOK US ⚡ LISTEN NOW &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-      <span>⚡ INDIANAPOLIS OLD SCHOOL METAL ⚡ BOOK US ⚡ LISTEN NOW &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>⚡ NEXT SHOW: SAT APR 11 — INDY CD &amp; VINYL / CLUB 808 — 11PM ⚡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>⚡ NEXT SHOW: SAT APR 11 — INDY CD &amp; VINYL / CLUB 808 — 11PM ⚡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>⚡ NEXT SHOW: SAT APR 11 — INDY CD &amp; VINYL / CLUB 808 — 11PM ⚡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>⚡ NEXT SHOW: SAT APR 11 — INDY CD &amp; VINYL / CLUB 808 — 11PM ⚡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
     </div>
   </div>
 
@@ -300,37 +262,24 @@
   </section>
 
   <!-- ══ NEXT SHOW ══ -->
-  <!--
-    ═══ WHEN A NEW SHOW IS BOOKED ═══
-    Replace the <div class="no-show-card"> block below with:
-
-    <div class="show-card featured">
-      <div class="show-date">
-        <span class="month">JUN</span>
-        <span class="day">15</span>
-      </div>
-      <div class="show-info">
-        <h3>Venue Name</h3>
-        <p>Indianapolis, IN · Doors 9PM EDT</p>
-      </div>
-      <a href="shows.html" class="btn">ALL SHOWS →</a>
-    </div>
-  -->
   <section class="home-shows container fade-in">
     <h2>NEXT SHOW</h2>
-    <div class="no-show-card">
-      <p class="label">CURRENTLY BETWEEN SHOWS</p>
-      <p class="headline">BOOK US FOR YOUR VENUE</p>
-      <p class="sub">Next date dropping soon.<br>In the meantime — hit us up.</p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="contact.html" class="btn">BOOK US →</a>
-        <a href="shows.html" class="btn btn-outline">PAST SHOWS →</a>
+    <div class="show-card featured">
+      <div class="show-date">
+        <span class="month">APR</span>
+        <span class="day">11</span>
       </div>
+      <div class="show-info">
+        <h3>Indy CD & Vinyl / Club 808</h3>
+        <p>Indianapolis, IN · Doors 11PM EDT</p>
+      </div>
+      <a href="shows.html" class="btn">ALL SHOWS →</a>
     </div>
   </section>
 
   <!-- ══ BAND PHOTO STRIP ══ -->
   <section class="home-band fade-in">
+    <!-- Replace with your actual band photo (band-hero.jpg) -->
     <img src="assets/photos/band-hero.webp" alt="HumanDebris band photo" class="band-strip-photo">
     <div class="band-strip-overlay">
       <p>"Old school metal with inspiration from Black Sabbath, Motorhead, Soundgarden, Slayer, Bad Brains"</p>
@@ -347,23 +296,9 @@
       <span>·</span>
       <a href="https://www.youtube.com/playlist?list=OLAK5uy_nDLS0WcJCeptWyizuUw6TR9iF5Icl0qGE" target="_blank">YouTube</a>
     </div>
-    <p class="footer-copy">© 2025 HumanDebris. All Rights Reserved.</p>
+    <p class="footer-copy">© 2026 HumanDebris. All Rights Reserved.</p>
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    // Force video autoplay on mobile
-    const vid = document.getElementById('hero-vid');
-    if (vid) {
-      vid.muted = true;
-      const tryPlay = () => {
-        vid.play().catch(() => {});
-      };
-      tryPlay();
-      document.addEventListener('touchstart', tryPlay, { once: true });
-      document.addEventListener('scroll', tryPlay, { once: true });
-      document.addEventListener('click', tryPlay, { once: true });
-    }
-  </script>
 </body>
 </html>
