@@ -5,21 +5,33 @@
 // ═══════════════════════════════════════
 
 const shows = [
+  // ── UPCOMING SHOWS ──
+  // Add new shows here. Example:
+  // {
+  //   date: "2026-06-15",
+  //   time: "9:00 PM",
+  //   venue: "Venue Name",
+  //   location: "Indianapolis, IN",
+  //   ticketUrl: "https://...",   // or "" for free
+  //   past: false
+  // },
+
+  // ── PAST SHOWS ──
   {
     date: "2026-04-11",
     time: "8:00 PM",
     venue: "Stranger Attractions Presents — HIGH DESERT QUEEN w/ Gran Moreno",
     location: "Indianapolis, IN",
-    ticketUrl: "#",
-    past: false
+    ticketUrl: "",
+    past: true
   },
   {
     date: "2026-04-11",
     time: "11:00 PM",
     venue: "Indy CD & Vinyl / Club 808",
     location: "Indianapolis, IN",
-    ticketUrl: "#",
-    past: false
+    ticketUrl: "",
+    past: true
   },
   {
     date: "2025-01-31",
@@ -48,7 +60,7 @@ function renderShows() {
   let html = '<h2>UPCOMING SHOWS</h2><div class="shows-list">';
 
   if (upcoming.length === 0) {
-    html += '<p class="no-shows">No upcoming shows. Check back soon.</p>';
+    html += '<p class="no-shows">No upcoming shows booked. Check back soon — or <a href="contact.html">book us</a> for your venue.</p>';
   }
 
   upcoming.forEach(s => {
